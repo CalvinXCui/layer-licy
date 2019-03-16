@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>金证资产管理</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="layui/css/global.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">金证资产管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left" lay-filter="top_nav">
+            <li class="layui-nav-item layui-this"><a href="javascript:void(0)">首页</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)">资源管理</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)">售后管理</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)">考勤管理</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)">权限管理</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)">全局管理</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="head.jpg" class="layui-nav-img">
+                    licy
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退出</a></li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll" id="left_nav">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.ppdai.com/landingbdpz.html?regsourceid=baidupcbrand&utm_tag=baidu_pc95175" ids="1">我的地盘</a></li>
+            </ul>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" style="display:none">
+                 <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.taobao.com" ids="7">张家口</a></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.baidu.com" ids="8">日本</a></li>
+
+
+            </ul>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" style="display:none">
+                 <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.hao123.com" ids="9">石家庄</a></li>
+
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.hao123.com" ids="2">发布商品</a></li>
+
+            </ul>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" style="display:none">
+
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.hao123.com" ids="2">发布商品</a></li>
+
+            </ul>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" style="display:none">
+                 <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://192.168.5.154" ids="3">oa</a></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://192.168.5.154:81/admin/login/index/html/1" ids="4">中国</a></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.hao123.com" ids="5">非洲</a></li>
+
+            </ul>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" style="display:none">
+                 <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://192.168.5.154" ids="3">oa</a></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://192.168.5.154:81/admin/login/index/html/1" ids="6">美国</a></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" name="menu" title="http://www.hao123.com" ids="2">发布商品</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="layui-tab layui-tab-brief" lay-filter="demo" lay-allowclose="true">
+        <ul class="layui-tab-title site-demo-title">
+            <!--<li class="layui-this" lay-id="0">我的地盘</li>-->
+        </ul>
+        <div class="layui-body layui-tab-content site-demo site-demo-body">
+            <!--<div class="layui-tab-item layui-show">我的地盘内容</div>-->
+        </div>
+    </div>
+    <div class="layui-footer footer footer-demo">
+        <div class="layui-main">
+            <p>© 2017 <a href="/">layui.com</a> MIT license</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="layui/layui.all.js"></script>
+<script>
+    //调整iframe高度
+    function reinitIframe() {
+        var iframes = document.getElementsByName("iframe");
+        try {
+            for(var i = 0; i < iframes.length; i++)
+                //iframes[i].height = iframes[i].contentWindow.document.documentElement.scrollHeight;
+                iframes[i].height = window.screen.height -250;
+        } catch(ex) {}
+    }
+    layui.use('element', function(){
+        var $ = layui.jquery,element = layui.element;
+        //触发事件
+        var active = {
+            tabAdd: function(){
+                window.setTimeout("reinitIframe()", 0);
+                var iframeheight=window.setInterval("reinitIframe()", 200);
+                var index = layer.load(0);
+                var num = $(this).attr("ids");
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: $(this).text(),
+                    content: '<iframe id="my_iframe'+num+'" name="iframe" src="' + this.title + '" frameborder="0" style="width: 100%;"></iframe>',
+                    id:num,
+                });
+                var iframe = document.getElementById("my_iframe"+num);
+                if (!iframe.attachEvent){//非IE
+                    iframe.onload = function(){
+                        layer.close(index);
+                        clearInterval(iframeheight);
+                    }
+                }else{
+                    iframe.attachEvent("onload", function(){ // IE
+                        layer.close(index);
+                        clearInterval(iframeheight);
+                    });
+                }
+            },
+        };
+        $("a[name='menu']").on("click", function() {
+            var title = $(this).text();
+            var tabs = $(".layui-tab-title").children();
+            for(var i = 0; i < tabs.length; i++) {
+                if($(tabs[i]).html().substr(0,$(tabs[i]).html().indexOf("i")-1) == title) {
+                    var Iframe = document.getElementsByName("iframe");
+                    var IframeSrc=$(Iframe[i]).attr("src");
+                    $(Iframe[i]).attr("src",IframeSrc);
+                    element.tabChange('demo', $(tabs[i]).attr("lay-id"));
+                    return;
+                }
+            }
+            if(tabs.length>=8){
+                layer.msg('快捷菜单挤爆了！！！');
+                return;
+            }
+            active["tabAdd"].call(this);
+            element.tabChange('demo',$(this).attr("ids"));
+        });
+        element.on('nav(top_nav)', function(elem){
+            $(this).parent().addClass('layui-this').siblings().removeClass('layui-this');
+            leftnavs($(this).index());
+        });
+        leftnavs(0);
+        function leftnavs(index){
+            $("#left_nav ul").eq(index).show().siblings().hide();
+            $("#left_nav ul:eq("+index+") li a")[0].click();
+            $("#left_nav ul:eq("+index+") li")[0].addClass('layui-this').siblings().removeClass('layui-this');
+        }
+    });
+</script>
+</body>
+</html>
